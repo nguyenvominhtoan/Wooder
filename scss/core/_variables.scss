@@ -1,0 +1,110 @@
+:root {
+	--gap: 28px;
+
+	--max-width-page: 2560px;
+	--max-width-container-fluid: 1920px;
+	--max-width-container: calc(1196px + calc(var(--gap) * 2));
+
+	// color 
+	--brown-cl: #bea67c;
+	--white-cl: #fff;
+	--black-cl: #000;
+	--grey-cl: #464646;
+	--grey-footer: #b0b0b0;
+	// font size 
+	--fs-h1: 8.4rem;
+	--lh-h1: normal;
+
+	--fs-h2: 4.6rem;
+	--lh-h2: 5.6rem;
+
+	--fs-h3: 1.8rem;
+	--lh-h3: 2.4rem;
+
+	--fs-h4: 1.2rem;
+
+	--text-btn: 1.5rem;
+	--lh-btn: normal;
+
+	--fs-body: 1.6rem;
+	--lh-body: 2.2rem;
+
+	--fs-body-small: 1.4rem;
+	--lh-body-small: normal;
+
+	// general 
+	--height-header: 90px;
+	--height-button: 90px;
+	--pd-section: 120px;
+
+	// time transition 
+	--duration: 0.4s --cubic;
+
+	// reponsive 
+	@include md {
+		--container-max-width: 1140px;
+	}
+
+	@include sm {
+		--container-max-width: 960px;
+		--pd-section: 90px;
+		--fs-h2: 4.2rem;
+		--lh-h2: 5.2rem;
+
+		--fs-h3: 1.8rem;
+		--lh-h3: 2.4rem;
+
+	}
+
+	@include xs {
+		--container-max-width: 720px;
+		--gap: 10px;
+		--pd-section: 60px;
+
+		//font size
+		--fs-h1: 5.6rem;
+		--lh-h1: normal;
+
+		--fs-h2: 3.8rem;
+		--lh-h2: 4.2rem;
+
+		--fs-h3: 1.6rem;
+		--lh-h3: 2.2rem;
+
+		--text-btn: 1.2rem;
+		--lh-btn: normal;
+
+		--fs-body: 1.5rem;
+		--lh-body: 2rem;
+
+		--fs-body-small: 1.2rem;
+		--lh-body-small: normal;
+	}
+
+	@include xxs {
+		--container-max-width: 100%;
+		//font size
+		--fs-h1: 5.6rem;
+		--lh-h1: normal;
+
+		--fs-h2: 3.8rem;
+		--lh-h2: 4.2rem;
+
+		--fs-h3: 1.6rem;
+		--lh-h3: 2.2rem;
+
+		--text-btn: 1.2rem;
+		--lh-btn: normal;
+
+		--fs-body: 1.5rem;
+		--lh-body: 2rem;
+
+		--fs-body-small: 1.2rem;
+		--lh-body-small: normal;
+	}
+
+	@include xxxs {
+		--container-max-width: 100%;
+		--pd-section: 60px;
+	}
+}

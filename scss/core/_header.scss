@@ -1,0 +1,301 @@
+/* Header */
+.header {
+    font-size: var(--fs-h3);
+    width: 100%;
+    height: var(--height-header);
+    transition: var(--time-transition) background;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    font-family: pb;
+
+    &.--bg-header {
+        @include transition(0.3s);
+        background: rgb(131, 131, 131);
+        background: linear-gradient(360deg, rgba(131, 131, 131, 1) 0%, rgba(0, 0, 0, 1) 64%, rgba(47, 47, 45, 1) 96%);
+        opacity: 0.8;
+    }
+
+    .container-fluid {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    &__menu {
+        display: flex;
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        letter-spacing: 2px;
+
+        li a {
+            position: relative;
+            text-decoration: none;
+            color: var(--white-cl);
+            margin: 0 16px;
+            line-height: normal;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        li a:hover {
+            color: var(--brown-cl);
+
+            &::after {
+                position: absolute;
+                content: "";
+                display: block;
+                bottom: -3px;
+                width: 35px;
+                height: 2px;
+                background-color: var(--brown-cl);
+                animation-timing-function: cubic-bezier(.06, .85, 1, .36);
+            }
+
+        }
+
+    }
+
+    .right {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .lang {
+            position: relative;
+            cursor: pointer;
+            height: 100%;
+            font-size: var(--fs-h3);
+            color: var(--white-cl);
+
+            &__current {
+                height: 100%;
+                display: flex;
+                align-items: center;
+
+                span {
+                    margin-right: 5px;
+                }
+            }
+
+            &__option {
+                background-color: var(--grey-cl);
+                width: 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                right: 0;
+                top: var(--height-header);
+                z-index: 198;
+                opacity: 0;
+                visibility: hidden;
+
+                @include transition(0.3s);
+
+                &-item {
+                    padding: 12px;
+
+                    &:hover {
+                        color: var(--brown-cl);
+                    }
+                }
+
+
+            }
+
+            &.active {
+                .lang__current {
+                    i {
+                        @include transform(rotateX(180deg));
+                    }
+                }
+
+                .lang__option {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        .btnmenu {
+            width: 44px;
+            height: 24px;
+            position: relative;
+            margin-left: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 300;
+
+            span {
+                display: block;
+                content: "";
+                width: 100%;
+                height: 2px;
+                top: 50%;
+                background-color: var(--brown-cl);
+                position: absolute;
+                @include transform(translateY(-50%));
+                @include transition(0.3s);
+            }
+
+            &::before,
+            &::after {
+                display: block;
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: var(--brown-cl);
+                @include transform(rotate(0deg) translateY(0px));
+                @include transition(0.3s);
+            }
+
+            &::after {
+                position: absolute;
+                bottom: 0;
+            }
+
+            &.active {
+                &::before {
+                    transform: (rotate(45deg) translate(9px, 6px));
+                    @include transition(0.3s);
+                }
+
+                &::after {
+                    transform: (rotate(-45deg) translate(9px, -6px));
+                    @include transition(0.3s);
+                }
+
+                span {
+                    opacity: 0;
+                    @include transition(0.3s);
+                }
+            }
+
+        }
+    }
+
+}
+
+@include sm {
+
+    /* Header */
+    .header {
+        .header__logo {
+            height: 20px;
+            width: 130px;
+        }
+
+        .header__menu {
+            margin-left: 20px;
+
+            li a {
+                font-size: var(--fs-h3);
+                text-decoration: none;
+                color: var(--white-cl);
+                margin: 0 10px;
+                line-height: normal;
+            }
+
+            li a:hover {
+                color: var(--brown-cl);
+
+                &.after {
+                    @include transform(scaleX(1));
+                    @include transform-origin(right center);
+                    @include transition(0.3s)
+                }
+
+                /* &::after {
+                            content: "";
+                            display: block;
+                            width: 35px;
+                            height: 2px;
+                            background-color: var(--brown-cl);
+                        }
+                        */
+            }
+
+        }
+    }
+}
+
+@include xs {
+
+    /* Header */
+    .header {
+        .header__logo {
+            height: 18px;
+            width: 135px;
+        }
+
+        .header__menu {
+            margin-left: 15px;
+
+            li a {
+                font-size: var(--fs-h4);
+                text-decoration: none;
+                color: var(--white-cl);
+                margin: 0 10px;
+                line-height: normal;
+            }
+
+            li a:hover {
+                color: var(--brown-cl);
+            }
+
+        }
+    }
+}
+
+@include xxs {
+
+    /* Header */
+    .header {
+
+        .header__logo {
+            height: 18px;
+            width: 135px;
+        }
+
+        .header__menu {
+            @include hide;
+        }
+
+        .right {
+            .btnmenu {
+                display: block;
+            }
+        }
+    }
+}
+
+@include xxxs {
+
+    /* Header */
+    .header {
+        width: 100vw;
+
+        .header__logo {
+            height: 18px;
+            width: 135px;
+        }
+
+        .header__menu {
+            @include hide;
+        }
+
+        .right {
+            .btnmenu {
+                display: block;
+            }
+        }
+    }
+}

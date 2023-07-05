@@ -1,0 +1,162 @@
+// css img, button, title, icon, elements...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: block;
+    outline: 0;
+    object-fit: contain;
+
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+strong {
+    font-family: ab; // optional
+}
+
+.--hidden {
+    display: none;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+
+.--hidden {
+    display: none;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+.--hiden {
+    display: none;
+}
+
+
+.heading {
+    color: var(--black-cl);
+    font-size: var((--fs-h2));
+    line-height: var(--lh-h2);
+    letter-spacing: 5px;
+    font-family: pb;
+    margin-bottom: 5px;
+    position: relative;
+
+    &.--h2 {
+        font-size: var((--fs-h2));
+        line-height: var(--lh-h2);
+    }
+
+    &.--h3 {
+        font-size: var((--fs-h3));
+        line-height: var(--lh-h2);
+    }
+
+    &.--white-cl {
+        color: var(--white-cl);
+    }
+
+    &.--brown-cl {
+        color: var(--brown-cl);
+    }
+
+    &.--black-cl {
+        color: var(--black-cl);
+    }
+}
+
+.--content {
+    color: var(--grey-cl);
+    font-size: var((--fs-h3));
+    line-height: var(--lh-h3);
+    font-family: pr;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.--before::before {
+    position: absolute;
+    content: "";
+    width: 58px;
+    height: 4px;
+    background-color: var(--brown-cl);
+}
+
+.--after::after {
+    margin-top: 4px;
+    content: "";
+    display: block;
+    width: 35px;
+    height: 2px;
+    top: 60px;
+    background-color: var(--brown-cl);
+}
+
+.--learnmore::after {
+    position: absolute;
+    top: 20px;
+}
+
+.--btn-transparent {
+    border: 2px solid #fff;
+    background-color: transparent;
+}
+
+.--news {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 38px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.--gird {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 28px;
+    margin-bottom: 70px;
+    align-items: center;
+}
+
+.--btn__learnmore {
+    display: inline-flex;
+    align-items: center;
+    color: var(--black-cl);
+    letter-spacing: 2px;
+    position: relative;
+    font-family: pb;
+
+    img {
+        margin-left: 10px;
+    }
+}

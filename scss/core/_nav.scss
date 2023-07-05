@@ -1,0 +1,41 @@
+.nav {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black-cl);
+    opacity: 0;
+    pointer-events: none;
+    @include transition(0.3s);
+
+    li {
+        margin-bottom: 30px;
+
+        a {
+            font-size: var(--fs-h3);
+            font-family: pb;
+            color: var(--white-cl);
+            @include transition(0.3s);
+
+            &:hover {
+                color: var(--brown-cl);
+            }
+        }
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+        @include transition(0.3s);
+    }
+
+    @include sm {}
+
+    @include xxs {}
+}
