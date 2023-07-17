@@ -664,6 +664,7 @@
   }
 
   .news__tabs {
+    white-space: nowrap;
     &-item {
       box-sizing: border-box;
       font-size: 13px;
