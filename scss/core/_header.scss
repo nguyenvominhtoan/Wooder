@@ -59,7 +59,7 @@
           height: 1px;
           background-color: var(--brown-cl);
           position: absolute;
-          bottom: 3px;
+          bottom: 0px;
           @include transform(scaleX(0));
           // transition: var(--duration) transform, var(--duration) background-color;
           transition-duration: 0.3s;
