@@ -1,51 +1,51 @@
 html {
-	font-size: 62.5%; // 1rem = 10px
+  font-size: 62.5%; // 1rem = 10px
 }
 
 body {
-	width: 100%;
-	max-width: var(--max-width-page);
-	margin: auto;
-	scroll-behavior: smooth;
-	font-family: pr;
-	font-size: var(--fs-body);
-	line-height: var(--lh-body);
-	overflow-x: hidden;
+  width: 100%;
+  max-width: var(--max-width-page);
+  margin: auto;
+  scroll-behavior: smooth;
+  font-family: pr;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  overflow-x: hidden;
+  overflow: hidden;
+  &.--disable-scroll {
+    height: 100vh;
+    overflow: hidden;
+  }
 
-	&.--disable-scroll {
-		height: 100vh;
-		overflow: hidden;
-	}
+  .container-fluid {
+    width: 100%;
+    max-width: var(--max-width-container-fluid);
+    padding-right: var(--gap);
+    padding-left: var(--gap);
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
 
-	.container-fluid {
-		width: 100%;
-		max-width: var(--max-width-container-fluid);
-		padding-right: var(--gap);
-		padding-left: var(--gap);
-		margin-right: auto;
-		margin-left: auto;
-		position: relative;
-	}
+  .container {
+    width: 100%;
+    max-width: var(--max-width-container);
+    padding-right: var(--gap);
+    padding-left: var(--gap);
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
 
-	.container {
-		width: 100%;
-		max-width: var(--max-width-container);
-		padding-right: var(--gap);
-		padding-left: var(--gap);
-		margin-right: auto;
-		margin-left: auto;
-		position: relative;
-	}
+  .main {
+    position: relative;
 
-	.main {
-		position: relative;
+    section {
+      padding: var(--pd-section) 0;
+    }
+  }
 
-		section {
-			padding: var(--pd-section) 0;
-		}
-	}
-
-	&.--disbale-scroll {
-		overflow: hidden;
-	}
+  &.--disbale-scroll {
+    overflow: hidden;
+  }
 }
